@@ -39,7 +39,7 @@ public class Node implements node_data
 		this.key = key;
 	}
 	
-	public Node (int key, Point3D p , double weigth) 
+	/*public Node (int key, Point3D p , double weigth) 
 	{
 		this.key = key;
 		this.point = new Point3D (p);
@@ -51,6 +51,20 @@ public class Node implements node_data
 		this.key = key;
 		this.point = new Point3D (p);
 		this.weigth = weigth;
+		this.tag = tag;
+		this.info = info;
+	}*/
+	
+	public Node (int key, Point3D p) 
+	{
+		this.key = key;
+		this.point = new Point3D (p);
+	}
+	
+	public Node (int key, Point3D p , int tag, String info) 
+	{
+		this.key = key;
+		this.point = new Point3D (p);
 		this.tag = tag;
 		this.info = info;
 	}
