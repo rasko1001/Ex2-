@@ -153,7 +153,7 @@ public class Graph_Algo implements graph_algorithms
 		}
 		
 		// Initialize list for every node 
-		for (int i = 0; i < max; i++)
+		for (int i = 0; i < max+1; i++)
 		{ 
 			List<Node1> item = new ArrayList<Node1>(); 
 			adj.add(item); 
@@ -172,7 +172,7 @@ public class Graph_Algo implements graph_algorithms
 			}
 		}	
 		
-		DPQ d = new DPQ(max);
+		DPQ d = new DPQ(max+1);
 		d.dijkstra(adj, src);
 		return d.dist[dest];
 	}
@@ -231,7 +231,7 @@ public class Graph_Algo implements graph_algorithms
 			}
 		}	
 		
-		DPQ d = new DPQ(max);
+		DPQ d = new DPQ(max+1);
 		d.dijkstra(adj, src);
 		
 		List<node_data> ret = new ArrayList<node_data>();

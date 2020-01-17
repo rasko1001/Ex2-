@@ -1,5 +1,7 @@
 package dataStructure;
 
+import java.text.DecimalFormat;
+
 public class Edge implements edge_data
 {
 	
@@ -99,7 +101,8 @@ public class Edge implements edge_data
 	@Override
 	public String toString()
 	{
-		return "the src of the edge is in: " + this._src + " and the dest is in: " + this._dest + " and the wiegth between them is: " + this._weigth;
+		DecimalFormat df = new DecimalFormat("#.##");
+		return "the src of the edge is in: " + this._src + " and the dest is in: " + this._dest + " and the wiegth between them is: " + df.format(this._weigth);
 	}
 	
 }

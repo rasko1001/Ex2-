@@ -70,13 +70,16 @@ public class DGraph implements graph ,Serializable
 	{	
 		if (src == dest)
 			throw new RuntimeException ("can't connect vertex to himself");
+		
 		if (!nodes.containsKey(src) || !nodes.containsKey(dest))
 			throw new RuntimeException ("at least one of the vertex dosent't exists in the graph");
+		
 		if (this.edges.containsKey(src))
 		{
 			if (this.edges.get(src).containsKey(dest))
 			{
-				this.removeEdge(src, dest);
+				this.edges.get(src).remove(dest);
+			//	this.removeEdge(src, dest);
 				countEdges--;
 			}
 		}

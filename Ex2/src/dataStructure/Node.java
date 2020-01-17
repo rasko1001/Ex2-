@@ -10,16 +10,30 @@ public class Node implements node_data
 	private int tag = 0;
 	private String info = null;
 	private boolean visited = false;
+	//private static double t1 = Math.random()*100;
+	//private static double t2 = Math.random()*100;
 	/*public node ()
 	{
 	}*/
 	
 	public Node (int key) 
 	{
+		double sign1 = Math.random();
+		double sign2 = Math.random();
 		double t1 = Math.random()*100;
-		double t2 = Math.random()*100;
-		double x = t1*2+t2+13.3;
-		double y = t2*1.3+t1+20;
+		double t2 = Math.random()*1000;
+		
+		if (sign1>0.5)
+			sign1 = -1;
+		
+		if (sign2>0.5)
+			sign2 = -1;
+		
+		t1 = t1*sign2*sign1;
+		t2 = t2*sign1;
+		double x = (t1+t2+13.3)*Math.pow(key, 2)*0.8+2.7*key;
+		x = x*sign2;
+		double y = (t2*1.3+t1+20)*(key+2)*key/3.7+4.5*key;
 		Point3D tp = new Point3D(x,y);
 		this.point =tp;
 		this.key = key;
@@ -154,7 +168,7 @@ public class Node implements node_data
 	{
 		if (n instanceof node_data)
 		{
-			if (this.key == ((node_data) n).getKey())
+			if (this.key == ((node_data)n).getKey())
 				return true;
 		}
 		return false;
